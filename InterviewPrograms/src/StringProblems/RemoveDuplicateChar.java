@@ -31,7 +31,21 @@ public class RemoveDuplicateChar {
             System.out.println(sb2);
         }
         // Method - 3 : Using Character Array
-        
+            char[] arr = inputString.toCharArray();
+        StringBuilder sb3 = new StringBuilder();
+        for(int i = 0; i<inputString.length();i++){
+            boolean repeated = false;
+            for(int j =i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    repeated = true;
+                    break;
+                }
+                if(!repeated){
+                    sb3.append(arr[i]);
+                }
+            }
+            System.out.println(sb3);
+        }
         // Method - 4 : Using Set interface method
         StringBuilder sb4 = new StringBuilder();
         Set<Character> newSet = new HashSet<>();
